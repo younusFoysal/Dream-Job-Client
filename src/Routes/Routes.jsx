@@ -4,6 +4,8 @@ import Main from "../Layout/Main.jsx";
 import Home from "../pages/Home/Home.jsx";
 import Login from "../pages/Login.jsx";
 import Register from "../pages/Register.jsx";
+import AddJob from "../pages/Jobs/AddJob.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: "/addjob",
+                element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
             }
         ]
     },
