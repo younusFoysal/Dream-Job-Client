@@ -1,26 +1,119 @@
 import React, {useEffect, useState} from 'react';
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa6";
 import {Link} from "react-router-dom";
+import {useQuery} from "@tanstack/react-query";
+import {ToastContainer} from "react-toastify";
 
 const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const {} = useQuery({
-
+    const {isPending, isError, error, data: users} = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await fetch('https://localhost/user')
+            return res.json();
+        }
     })
 
+    if (isPending){
+        return <div>Loading</div>
+    }
+    if (isError){
+        return <p>{error.message}</p>
+    }
 
 
-    const [users, setUsers] = useState([])
-    useEffect(() => {
-        fetch('https://localhost/user')
-            .then(res => res.json())
-            .then(data => {
-                setUsers(data)
+
+    // const [users, setUsers] = useState([])
+    // useEffect(() => {
+    //     fetch('https://localhost/user')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setUsers(data)
+    //         })
+    //
+    // }, []);
+
+
+    const handleRegister = e => {
+        e.preventDefault();
+
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name')
+        const photoUrl = form.get('photoUrl')
+        const email = form.get('email')
+        const password = form.get('password')
+        console.log(email, password)
+
+        //reset error
+        setRegisterError('')
+        setSuccess('')
+
+
+        if(password.length < 6 ){
+            setRegisterError('Password should be at least 6 char...');
+            toast('Password should be at least 6 char...')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)){
+            setRegisterError('Your pass should be at least 1 upper case char...');
+            toast('Your pass should be at least 1 upper case char...')
+            return;
+        }
+        else if (!/[a-z]/.test(password)){
+            setRegisterError('Your pass should be at least 1 lower case char...');
+            toast('Your pass should be at least 1 lower case char...')
+            return;
+        }
+
+
+
+        //create user
+
+
+        // adding in DB
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                toast('User Created.')
+                setSuccess('User Created.')
+
+                // update profile
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photoUrl
+                })
+                    .then(() => console.log("Profile Updated"))
+                    .catch()
+
+                navigate('/')
+
+
+                const createdAt = result.user?.metadata?.creationTime
+                const user = {email, createAt: createdAt}
+                fetch('https://happy-tour-server-alpha.vercel.app/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.insertedId){
+                            toast('User Added in DB.')
+                        }
+                    })
+            })
+            .catch(error => {
+                console.error(error)
+                setRegisterError(error.message);
             })
 
-    }, []);
+
+    }
 
 
 
@@ -47,7 +140,7 @@ const Register = () => {
             <section className="bg-white">
                 <div className="w-full mx-auto max-w-xl flex flex-col justify-center mb-16 py-4 relative p-8">
 
-                    <form className="w-full divide-neutral-200 rounded-3xl bg-white shadow-2xl border p-8 lg:p-10">
+                    <form onSubmit={handleRegister} className="w-full divide-neutral-200 rounded-3xl bg-white shadow-2xl border p-8 lg:p-10">
                         <div className="shadow rounded-lg">
 
                             <div className="flex items-center bg-sky-400 rounded-t-lg border-sky-500 border-b">
@@ -119,6 +212,7 @@ const Register = () => {
                 </div>
             </section>
 
+            <ToastContainer />
 
         </div>
     );
