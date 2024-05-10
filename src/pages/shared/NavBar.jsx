@@ -3,6 +3,7 @@ import {Link, NavLink} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import logo from "../../assets/logo.png"
+import {AuthContext} from "../../providers/AuthProvider.jsx";
 
 const Navbar = () => {
 
@@ -30,8 +31,8 @@ const Navbar = () => {
 
 
 
-    // const {user, logOut} = useContext(AuthContext);
-    const user = false
+    const {user, logOut} = useContext(AuthContext);
+    //const user = useContext(AuthContext);
 
 
     const handleLogOut = () => {

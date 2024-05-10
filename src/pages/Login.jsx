@@ -8,6 +8,48 @@ import {FaGithub} from "react-icons/fa";
 
 const Login = () => {
 
+    const { signInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const [showPassword, setShowPassword] = useState(false);
+
+
+
+    const handleLogin = e => {
+        e.preventDefault();
+
+
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email')
+        const password = form.get('password')
+        console.log(email, password)
+
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                toast('Logged In Successfully')
+                e.target.reset();
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error)
+                toast('Email & Password not match!')
+            })
+
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+
 
     return (
         <div>
@@ -25,7 +67,7 @@ const Login = () => {
                             <h1 className="pt-8 pb-6 font-bold dark:text-gray-400 text-5xl text-center cursor-default">
                                 Log in
                             </h1>
-                            <form action="#" method="post" className="space-y-4">
+                            <form onSubmit={handleLogin} className="space-y-4">
                                 <div>
                                     <label for="email" className="mb-2  dark:text-gray-400 text-lg">Email</label>
                                     <input
@@ -40,18 +82,18 @@ const Login = () => {
                                     <label for="password" className="mb-2 dark:text-gray-400 text-lg">Password</label>
                                     <input
                                         id="password"
-                                        className="border p-3 shadow-md dark:bg-indigo-700 dark:text-gray-300  dark:border-gray-700 placeholder:text-base focus:scale-105 ease-in-out duration-300 border-gray-300 rounded-lg w-full"
+                                        className="border mb-4 p-3 shadow-md dark:bg-indigo-700 dark:text-gray-300  dark:border-gray-700 placeholder:text-base focus:scale-105 ease-in-out duration-300 border-gray-300 rounded-lg w-full"
                                         type="password"
                                         placeholder="Password"
                                         required
                                     />
+
                                 </div>
-                                <a className="group text-blue-400 transition-all duration-100 ease-in-out" href="#">
-                                        <span className="bg-left-bottom bg-gradient-to-r text-sm from-blue-400 to-blue-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-              >
-                Forget your password?
-              </span>
-                                </a>
+                                {/*<a className="group text-blue-400 transition-all duration-100 ease-in-out" href="#">*/}
+                                {/*        <span className="bg-left-bottom bg-gradient-to-r text-sm from-blue-400 to-blue-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">*/}
+                                {/*            Forget your password?*/}
+                                {/*        </span>*/}
+                                {/*</a>*/}
                                 <button
                                     className="bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg mt-6 p-2 text-white font-bold rounded-lg w-full hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 ease-in-out"
                                     type="submit"
@@ -78,7 +120,7 @@ const Login = () => {
                             >
 
                                 <button
-                                    onClick=""
+                                    onClick={handleGoogleSignIn}
                                     className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
                                     <svg className="mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
                                          width="25px">
