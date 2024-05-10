@@ -1,10 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa6";
 import {Link} from "react-router-dom";
 
 const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const {} = useQuery({
+
+    })
+
+
+
+    const [users, setUsers] = useState([])
+    useEffect(() => {
+        fetch('https://localhost/user')
+            .then(res => res.json())
+            .then(data => {
+                setUsers(data)
+            })
+
+    }, []);
+
+
+
 
     return (
         <div>
