@@ -1,7 +1,7 @@
 import React, {createContext, useEffect, useState} from 'react';
 import PropTypes from "prop-types";
 import auth from "../firebase/firebase.config.js";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth"
 
 
 
