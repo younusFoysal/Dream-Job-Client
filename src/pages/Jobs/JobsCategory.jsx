@@ -3,14 +3,14 @@ import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import {FaBriefcase} from "react-icons/fa";
 import { useEffect } from 'react';
-import { useJobs , useJobsH, useJobsPT, useJobsR } from '../../Hooks/useJobs.jsx';
+import { useJobsos , useJobsH, useJobsPT, useJobsR } from '../../Hooks/useJobs.jsx';
 import JobsCategoryCard from "./JobsCategoryCard.jsx";
 import {Link} from "react-router-dom";
 
 
 const JobsCategory = () => {
 
-    const { data: jobsos, isLoading: isLoadingOS, isError: isErrorOS } = useJobs();
+    const { data: jobsos, isLoading: isLoadingOS, isError: isErrorOS } = useJobsos();
     const { data: jobsh, isLoading: isLoadingH, isError: isErrorH } = useJobsH();
     const { data: jobsr, isLoading: isLoadingR, isError: isErrorR } = useJobsR();
     const { data: jobspt, isLoading: isLoadingPT, isError: isErrorPT } = useJobsPT();

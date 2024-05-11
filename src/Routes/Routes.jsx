@@ -6,6 +6,11 @@ import Login from "../pages/Login.jsx";
 import Register from "../pages/Register.jsx";
 import AddJob from "../pages/Jobs/AddJob.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
+import AllJobs from "../pages/Jobs/AllJobs.jsx";
+import BlogDetails from "../pages/Blogs/BlogDetails.jsx";
+import MyJobs from "../pages/Jobs/MyJobs.jsx";
+
+
 
 const router = createBrowserRouter([
     {
@@ -27,7 +32,21 @@ const router = createBrowserRouter([
             {
                 path: "/addjob",
                 element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
+            },
+            {
+                path: "/jobs",
+                element: <AllJobs></AllJobs>
+            },
+            {
+                path: "/blogs",
+                element: <BlogDetails></BlogDetails>
+            },
+            {
+                path: "/myjobs",
+                element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>
             }
+
+
         ]
     },
 ]);
