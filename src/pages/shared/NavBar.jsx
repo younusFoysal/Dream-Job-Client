@@ -57,7 +57,7 @@ const Navbar = () => {
 
         {user ? <>
                 <li><NavLink to="/addjob" className="mr-2">Add A Job</NavLink></li>
-                <li><NavLink to="/appliedjobs" className="mr-2">Applied Jobs</NavLink></li>
+                <li><NavLink to={"/appliedjobs"} className="mr-2">Applied Jobs</NavLink></li>
                 <li><NavLink to='/myjobs/' className="mr-2">My Jobs</NavLink></li>
                 <li><NavLink to="/profile" className="mr-2">User Profile</NavLink></li>
             </>

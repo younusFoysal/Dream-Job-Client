@@ -45,13 +45,13 @@ const Banner = () => {
 
                         <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
 
-                            <Link to="/alljobs" target="_blank"
+                            <Link to="/jobs"
                                className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-white bg-sky-600 rounded-lg sm:w-auto hover:bg-sky-800 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                                 <MdAdsClick  className="mr-2" />
                                 Apply Now
                             </Link>
 
-                            <Link to="/alljobs" target="_blank"
+                            <Link to="/jobs"
                                className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-emerald-600 border border-emerald-500 rounded-lg sm:w-auto focus:outline-none hover:bg-emerald-500 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                                 <FaBriefcase className="mr-2" />
                                 View All Jobs

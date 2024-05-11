@@ -10,6 +10,8 @@ import AllJobs from "../pages/Jobs/AllJobs.jsx";
 import BlogDetails from "../pages/Blogs/BlogDetails.jsx";
 import MyJobs from "../pages/Jobs/MyJobs.jsx";
 import UpdateJobs from "../pages/Jobs/UpdateJobs.jsx";
+import JobDetails from "../pages/Jobs/JobDetails.jsx";
+import AppliedJobs from "../pages/Jobs/AppliedJobs.jsx";
 
 
 
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
             {
                 path: "/updateJobs/:id",
                 element: <PrivateRoute><UpdateJobs></UpdateJobs></PrivateRoute>
+            },
+            {
+                path: "/jobDetails/:id",
+                element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>
+            },
+            {
+                path: '/appliedjobs',
+                element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>
             }
 
 

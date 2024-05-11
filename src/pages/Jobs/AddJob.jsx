@@ -11,7 +11,7 @@ const AddJob = () => {
     const { user } = useContext(AuthContext);
 
 
-    const addTourMutation = useMutation({
+    const addJobMutation = useMutation({
         mutationFn: async (newJob) => {
             const response = await fetch('http://localhost:5000/job', {
                 method: 'POST',
@@ -68,10 +68,10 @@ const AddJob = () => {
         // };
 
         try {
-            await addTourMutation.mutateAsync(newJob);
+            await addJobMutation.mutateAsync(newJob);
             form.reset();
         } catch (error) {
-            console.error('An error occurred while adding tour:', error);
+            console.error('An error occurred while adding job:', error);
         }
 
     }
