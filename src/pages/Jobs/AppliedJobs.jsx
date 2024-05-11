@@ -85,23 +85,16 @@ const AppliedJobs = () => {
                         <h1 className="text-3xl">Didn't find job that you were looking for? Try Filter by Category</h1>
                     </div>
 
-
-                    <div className="dropdown dropdown-hover mx-auto ">
-                        <div tabIndex={0} role="button" className="btn m-1 mx-auto">Hover</div>
-                        <ul tabIndex={0}
-                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
-                        </ul>
+                    <div className="w-1/4 mx-auto mb-4">
+                        <select value={filter} onChange={handleFilterChange} className="btn w-full hover:bg-sky-400">
+                            <option value="">All Categories</option>
+                            <option value="onSite">On Site</option>
+                            <option value="remote">Remote</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="partTime">Part Time</option>
+                            {/* Add more options based on your actual categories */}
+                        </select>
                     </div>
-
-                    <select value={filter} onChange={handleFilterChange}>
-                        <option value="">All Categories</option>
-                        <option value="onSite">On Site </option>
-                        <option value="remote">Remote</option>
-                        <option value="category3">Category 3</option>
-                        {/* Add more options based on your actual categories */}
-                    </select>
 
 
                     <div className="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">

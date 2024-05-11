@@ -12,6 +12,7 @@ import MyJobs from "../pages/Jobs/MyJobs.jsx";
 import UpdateJobs from "../pages/Jobs/UpdateJobs.jsx";
 import JobDetails from "../pages/Jobs/JobDetails.jsx";
 import AppliedJobs from "../pages/Jobs/AppliedJobs.jsx";
+import PageNotFound from "../pages/PageNotFound.jsx";
 
 
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <PageNotFound></PageNotFound>,
         children: [
             {
                 path: '/',
