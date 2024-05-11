@@ -143,7 +143,6 @@ const AddJob = () => {
                                                 placeholder="USER NAME"
                                                 defaultValue={user.displayName}
                                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                                disabled
                                             />
                                         </div>
 
@@ -159,7 +158,6 @@ const AddJob = () => {
                                                 placeholder="USER EMAIL"
                                                 defaultValue={user.email}
                                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                                disabled
                                             />
                                         </div>
 
@@ -227,7 +225,6 @@ const AddJob = () => {
                                                         defaultValue={moment().format('L')}
                                                         placeholder={moment().format('L')}
                                                         className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                                        disabled
                                                     />
                                                 </div>
                                             </div>
