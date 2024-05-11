@@ -151,7 +151,7 @@ const MyJobs = () => {
                                     <td className="py-4 px-6 border-b border-gray-200">{job.ddate}</td>
                                     <td className="py-4 px-6 border-b border-gray-200">{job.salary} Tk</td>
                                     <td className="py-4 px-6 border-b border-gray-200 ">
-                                        <Link to={`/jobDetails/${job._id}`}>
+                                        <Link to={`/updateJobs/${job._id}`}>
                                             <span className="bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-full text-xs mr-2">
                                                 Update
                                             </span>

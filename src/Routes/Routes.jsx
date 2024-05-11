@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute.jsx";
 import AllJobs from "../pages/Jobs/AllJobs.jsx";
 import BlogDetails from "../pages/Blogs/BlogDetails.jsx";
 import MyJobs from "../pages/Jobs/MyJobs.jsx";
+import UpdateJobs from "../pages/Jobs/UpdateJobs.jsx";
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "/myjobs",
                 element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>
+            },
+            {
+                path: "/updateJobs/:id",
+                element: <PrivateRoute><UpdateJobs></UpdateJobs></PrivateRoute>
             }
 
 
