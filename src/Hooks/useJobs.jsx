@@ -4,17 +4,16 @@ import {useContext} from "react";
 
 
 
-// Jobs by user email
-const {user} = useContext(AuthContext);
-
-const fetchJobsUser = async () => {
-    const response = await fetch(`http://localhost:5000/mylist/${user.email}`);
-    if (!response.ok) {
-        throw new Error('Failed to fetch Jobs');
-    }
-    return response.json();
-};
-
+// // Jobs by user email
+// const {user} = useContext(AuthContext);
+//
+// const fetchJobsUser = async () => {
+//     const response = await fetch(`http://localhost:5000/mylist/${user.email}`);
+//     if (!response.ok) {
+//         throw new Error('Failed to fetch Jobs');
+//     }
+//     return response.json();
+// };
 
 // All Jobs
 const fetchJobsALL = async () => {
@@ -61,9 +60,9 @@ const fetchJobsPT = async () => {
     return response.json();
 };
 
-export const useJobsUser = () => {
-    return useQuery('jobsuser', fetchJobsUser);
-};
+// export const useJobsUser = () => {
+//     return useQuery('jobsuser', fetchJobsUser);
+// };
 export const useJobsAll = () => {
     return useQuery('jobsall', fetchJobsALL);
 };
