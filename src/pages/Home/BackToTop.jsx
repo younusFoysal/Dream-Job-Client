@@ -11,7 +11,7 @@ const BackToTop = () => {
 
     return (
         <div className="fixed bottom-0 right-0 p-4">
-            <button className="bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center"
+            <button className="bg-gray-800 hover:bg-sky-400 shadow-xl hover:shadow-sky-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
                     onClick={backToTop}>
                 <FaArrowUp />
             </button>

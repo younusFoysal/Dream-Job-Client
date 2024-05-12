@@ -3,7 +3,7 @@ import React from 'react';
 const MeetCall = () => {
     return (
         <div>
-            <section className="relative z-10 overflow-hidden bg-indigo-600 py-16 px-8 mt-40 mb-40">
+            <section className="relative z-10 overflow-hidden bg-indigo-600 py-16 px-8 mt-40 mb-20">
                 <div className="container">
                     <div className="-mx-4 flex flex-wrap items-center">
                         <div className="w-full px-4 lg:w-1/2">
@@ -11,7 +11,7 @@ const MeetCall = () => {
                                 <div className="mb-10 lg:mb-0 ">
                                     <h1
                                         className="mt-0 mb-3 text-3xl font-bold leading-tight sm:text-4xl sm:leading-tight md:text-[40px] md:leading-tight text-white ">
-                                        Start building automated serverless forms</h1>
+                                        Discover jobs with AI-powered personalized job search</h1>
                                     <p
                                         className="w-full text-base font-medium leading-relaxed sm:text-lg sm:leading-relaxed text-white">
                                     </p>
@@ -21,7 +21,7 @@ const MeetCall = () => {
                         <div className="w-full px-4 lg:w-1/2">
                             <div className="text-center lg:text-right"><a
                                 className="font-semibold rounded-lg mx-auto inline-flex items-center justify-center bg-white py-4 px-9 hover:bg-opacity-90"
-                                href="#">Create Your First Form</a>
+                                href="#">Do Your First Search</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,8 @@ const MeetCall = () => {
                                                                              gradientUnits="userSpaceOnUse"><stop
             offset="0.520507" stop-color="white"></stop><stop offset="1" stop-color="white"
                                                               stop-opacity="0"></stop></linearGradient></defs></svg></span><span
-                className="absolute top-0 right-0 -z-10"><svg width="324" height="250" viewBox="0 0 324 220" fill="none"
+                className="absolute top-0 right-0 -z-10">
+                <svg width="324" height="250" viewBox="0 0 324 220" fill="none"
                                                               xmlns="http://www.w3.org/2000/svg"><path opacity="0.05"
                                                                                                        d="M203 -28.5L4.87819e-05 250.5L881.5 250.5L881.5 -28.5002L203 -28.5Z"
                                                                                                        fill="url(#paint0_linear_971_6911)"></path><defs><linearGradient

@@ -8,14 +8,15 @@ const Features = () => {
                     <div className="mx-auto max-w-5xl lg:text-center flex flex-col justify-center items-center">
                         <h2 className="text-base font-semibold leading-7 text-blue-100 bg-blue-600 px-3 rounded-lg uppercase mb-4 lg:mb-8">
                             Key Features</h2>
-                        <h1 className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-gray-900 text-center">Enhanced
+                        <h1 className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-gray-900 text-center">
+                            ENJOY EVEN
                             <span
-                                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900">Insurance Solutions</span>
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900">
+                                MORE WITH DREAM.JOBS NEWS!</span>
                         </h1>
-                        <p className="mt-6 text-md text-gray-600 max-w-lg text-center">Discover the exceptional features
-                            of our insurance
-                            services designed to streamline processes and provide comprehensive coverage for your
-                            needs.</p>
+                        <p className="mt-6 text-md text-gray-600 max-w-lg text-center">
+                            From industry insights to tips and trends, our News page offers a rich source of information to keep you updated on all things related to dream.jobs.
+                        </p>
                     </div>
                     <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
                         <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
@@ -31,12 +32,11 @@ const Features = () => {
                                                   d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
                                         </svg>
                                     </div>
-                                    Customized Coverage Plans
+                                    Our mission
                                 </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">Tailor your insurance coverage to
-                                    match your unique needs.
-                                    Our customizable plans ensure you only pay for the coverage that matters most to
-                                    you.
+                                <dd className="mt-2 text-base leading-7 text-gray-600">
+                                    Our mission is to empower individuals to pursue their dream jobs while automating and streamlining recruitment processes for businesses.
+                                    We believe that world would be a better place if everyone could get a fair chance.
                                 </dd>
                             </div>
                             <div className="relative pl-16">
@@ -51,12 +51,10 @@ const Features = () => {
                                                   d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"></path>
                                         </svg>
                                     </div>
-                                    Risk Assessment Expertise
+                                    Our User-friendly Interface
                                 </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">Benefit from our cutting-edge
-                                    risk assessment model,
-                                    providing accurate insights into potential risks and ensuring your coverage aligns
-                                    with your risk profile.
+                                <dd className="mt-2 text-base leading-7 text-gray-600">
+                                    With our user-friendly interface, job seekers can create dynamic profiles, matched with tailored job listings using advanced AI-powered matching algorithms and in the same time employers benefit and saving costs.
                                 </dd>
                             </div>
                             <div className="relative pl-16">
@@ -72,12 +70,10 @@ const Features = () => {
                                             </path>
                                         </svg>
                                     </div>
-                                    Cost-Efficient Premiums
+                                    We Provide Solutions
                                 </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">Experience cost-effective
-                                    insurance solutions. We keep our
-                                    premiums competitive, ensuring you receive optimal coverage without breaking the
-                                    bank.
+                                <dd className="mt-2 text-base leading-7 text-gray-600">
+                                    We provide solutions helping employers to stay competitive, assuring positive candidate experience  and making recruitment efficient.
                                 </dd>
                             </div>
                             <div className="relative pl-16">

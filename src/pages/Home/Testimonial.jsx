@@ -19,9 +19,9 @@ const Testimonial = () => {
                         <div className="lg:col-span-2 xl:col-auto">
                             <div
                                 className="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
-                                <p className="text-2xl leading-normal dark:text-gray-300">Share a <mark
-                                    className="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">testimonial</mark> that
-                                    hits some of your benefits from one of your popular customers.
+                                <p className="text-2xl leading-normal dark:text-gray-300">Dream.jobs <mark
+                                    className="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
+                                    the game-changer</mark> in recruitment technology solutions that offers hiring with AI-powered solutions.
                                 </p>
                                 <div className="flex items-center mt-8 space-x-3">
                                     <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
@@ -30,7 +30,7 @@ const Testimonial = () => {
                                              loading="lazy"/>
                                     </div>
                                     <div>
-                                        <div className="text-lg font-medium text-gray-200">Sarah Steiner</div>
+                                        <div className="text-lg font-medium text-sky-400">Sarah Steiner</div>
                                         <div className="text-gray-600 dark:text-gray-400">VP Sales at Google</div>
                                     </div>
                                 </div>
@@ -39,10 +39,11 @@ const Testimonial = () => {
                         <div className="">
                             <div
                                 className="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
-                                <p className="text-2xl leading-normal dark:text-gray-300">Make sure you only pick
-                                    the <mark
-                                        className="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">right
-                                        sentence</mark> to keep it short and simple.
+                                <p className="text-2xl leading-normal dark:text-gray-300">Say
+                                    <mark
+                                        className="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
+                                        goodbye to outdated
+                                    </mark> methods and embrace the future of hiring.
                                 </p>
                                 <div className="flex items-center mt-8 space-x-3">
                                     <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
@@ -51,7 +52,7 @@ const Testimonial = () => {
                                              loading="lazy"/>
                                     </div>
                                     <div>
-                                        <div className="text-lg font-medium text-gray-200">Dylan Ambrose</div>
+                                        <div className="text-lg font-medium text-sky-400">Dylan Ambrose</div>
                                         <div className="text-gray-600 dark:text-gray-400">Lead marketer at Netflix</div>
                                     </div>
                                 </div>
@@ -60,9 +61,9 @@ const Testimonial = () => {
                         <div className="">
                             <div
                                 className="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
-                                <p className="text-2xl leading-normal dark:text-gray-300">This is an <mark
-                                    className="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">awesome</mark> landing
-                                    page template I've seen. I would use this for anything.
+                                <p className="text-2xl leading-normal dark:text-gray-300">Dream.jobs is <mark
+                                    className="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
+                                    backed by the venture capital</mark> fund Zero Gravity Capital, as well as the European Regional Development.
                                 </p>
                                 <div className="flex items-center mt-8 space-x-3">
                                     <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
@@ -71,7 +72,7 @@ const Testimonial = () => {
                                              loading="lazy"/>
                                     </div>
                                     <div>
-                                        <div className="text-lg font-medium text-gray-200">Gabrielle Winn</div>
+                                        <div className="text-lg font-medium text-sky-400">Gabrielle Winn</div>
                                         <div className="text-gray-600 dark:text-gray-400">Co-founder of Acme Inc</div>
                                     </div>
                                 </div>
