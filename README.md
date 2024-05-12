@@ -18,7 +18,9 @@
 Installed Npm Packages:
 ```
 @tanstack/react-query
+@react-pdf/renderer
 Firebase
+framer-motion
 Moment
 Localforage
 match-sorter
@@ -34,6 +36,7 @@ react-query
 react-tabs
 react-simple-typewriter
 react-syntax-highlighter
+react-to-pdf
 sort-by
 sweetalert2
 daisyui
