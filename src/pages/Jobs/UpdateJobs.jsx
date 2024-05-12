@@ -16,7 +16,7 @@ const UpdateJobs = () => {
     const { id } = useParams();
 
     const { data: jobs, isLoading } = useQuery(['job', id], () =>
-        fetch(`http://localhost:5000/job/${id}`).then(res => res.json())
+        fetch(`https://dream-job-server-two.vercel.app/job/${id}`).then(res => res.json())
     );
 
 

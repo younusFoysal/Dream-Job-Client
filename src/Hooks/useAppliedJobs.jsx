@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 
 const fetchJobs = async () => {
-    const response = await fetch('http://localhost:5000/job');
+    const response = await fetch('https://dream-job-server-two.vercel.app/job');
     if (!response.ok) {
         throw new Error('Failed to fetch jobs data');
     }
@@ -11,7 +11,7 @@ const fetchJobs = async () => {
 };
 
 const fetchAppliedJobs = async () => {
-    const response = await fetch('http://localhost:5000/ajobs');
+    const response = await fetch('https://dream-job-server-two.vercel.app/ajobs');
     if (!response.ok) {
         throw new Error('Failed to fetch applied jobs data');
     }

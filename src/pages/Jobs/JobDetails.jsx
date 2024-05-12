@@ -20,7 +20,7 @@ const JobDetails = () => {
 
     const addaJobMutation = useMutation({
         mutationFn: async (newaJob) => {
-            const response = await fetch('http://localhost:5000/ajobs', {
+            const response = await fetch('https://dream-job-server-two.vercel.app/ajobs', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const JobDetails = () => {
 
 
     const { data: jobs, isLoading, isError } = useQuery(['job', id], () =>
-        fetch(`http://localhost:5000/job/${id}`).then(res => {
+        fetch(`https://dream-job-server-two.vercel.app/job/${id}`).then(res => {
             if (!res.ok) {
                 throw new Error('Failed to fetch job details');
             }

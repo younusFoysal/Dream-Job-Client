@@ -13,6 +13,7 @@ import UpdateJobs from "../pages/Jobs/UpdateJobs.jsx";
 import JobDetails from "../pages/Jobs/JobDetails.jsx";
 import AppliedJobs from "../pages/Jobs/AppliedJobs.jsx";
 import PageNotFound from "../pages/PageNotFound.jsx";
+import Profile from "../pages/Profile.jsx";
 
 
 
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             {
                 path: '/appliedjobs',
                 element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>
+            },
+            {
+                path: '/profile',
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             }
 
 

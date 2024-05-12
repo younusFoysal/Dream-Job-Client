@@ -8,7 +8,7 @@ import {useContext} from "react";
 // const {user} = useContext(AuthContext);
 //
 // const fetchJobsUser = async () => {
-//     const response = await fetch(`http://localhost:5000/mylist/${user.email}`);
+//     const response = await fetch(`https://dream-job-server-two.vercel.app/mylist/${user.email}`);
 //     if (!response.ok) {
 //         throw new Error('Failed to fetch Jobs');
 //     }
@@ -17,7 +17,7 @@ import {useContext} from "react";
 
 // All Jobs
 const fetchJobsALL = async () => {
-    const response = await fetch('http://localhost:5000/job');
+    const response = await fetch('https://dream-job-server-two.vercel.app/job');
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }
@@ -26,7 +26,7 @@ const fetchJobsALL = async () => {
 
 // On Site Jobs
 const fetchJobsOS = async () => {
-    const response = await fetch('http://localhost:5000/jobcategory/onSite');
+    const response = await fetch('https://dream-job-server-two.vercel.app/jobcategory/onSite');
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }
@@ -35,7 +35,7 @@ const fetchJobsOS = async () => {
 
 // Remote
 const fetchJobsR = async () => {
-    const response = await fetch('http://localhost:5000/jobcategory/remote');
+    const response = await fetch('https://dream-job-server-two.vercel.app/jobcategory/remote');
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }
@@ -44,7 +44,7 @@ const fetchJobsR = async () => {
 
 // Hybrid
 const fetchJobsH = async () => {
-    const response = await fetch('http://localhost:5000/jobcategory/hybrid');
+    const response = await fetch('https://dream-job-server-two.vercel.app/jobcategory/hybrid');
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }
@@ -53,7 +53,7 @@ const fetchJobsH = async () => {
 
 // Part Time
 const fetchJobsPT = async () => {
-    const response = await fetch('http://localhost:5000/jobcategory/partTime');
+    const response = await fetch('https://dream-job-server-two.vercel.app/jobcategory/partTime');
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }

@@ -13,7 +13,7 @@ const AddJob = () => {
 
     const addJobMutation = useMutation({
         mutationFn: async (newJob) => {
-            const response = await fetch('http://localhost:5000/job', {
+            const response = await fetch('https://dream-job-server-two.vercel.app/job', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

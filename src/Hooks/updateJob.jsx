@@ -2,7 +2,7 @@
 
 export const updateJob = async (id, updatedJob) => {
     try {
-        const response = await fetch(`http://localhost:5000/job/${id}`, {
+        const response = await fetch(`https://dream-job-server-two.vercel.app/job/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

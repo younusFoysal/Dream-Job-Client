@@ -2,7 +2,7 @@
 
 export const deleteJob = async (jobId) => {
     try {
-        const response = await fetch(`http://localhost:5000/job/${jobId}`, {
+        const response = await fetch(`https://dream-job-server-two.vercel.app/job/${jobId}`, {
             method: 'DELETE'
         });
 

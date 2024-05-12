@@ -176,7 +176,7 @@ const MyJobs = () => {
 };
 
 const fetchJobsUser = async (email) => { // Receive email as an argument
-    const response = await fetch(`http://localhost:5000/mylist/${email}`, {credentials: "include"}); // Use email
+    const response = await fetch(`https://dream-job-server-two.vercel.app/mylist/${email}`, {credentials: "include"}); // Use email
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }

@@ -2,7 +2,7 @@ import { useMutation } from 'react-query';
 
 export const useAddUserToDB = () => {
     return useMutation((user) =>
-        fetch('http://localhost:5000/user', {
+        fetch('https://dream-job-server-two.vercel.app/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
