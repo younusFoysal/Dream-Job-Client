@@ -55,7 +55,7 @@ const Navbar = () => {
                 <li><NavLink to="/addjob" className="mr-2">Add A Job</NavLink></li>
                 <li><NavLink to={"/appliedjobs"} className="mr-2">Applied Jobs</NavLink></li>
                 <li><NavLink to='/myjobs/' className="mr-2">My Jobs</NavLink></li>
-                {/*<li><NavLink to="/profile" className="mr-2">User Profile</NavLink></li>*/}
+                <li><NavLink to="/profile" className="mr-2">User Profile</NavLink></li>
             </>
             :
             <>
@@ -90,8 +90,9 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <Link to="/">
-                        <img src={logo} className=" h-10"/>
+                    <Link to="/" className="flex hover:bg-sky-100 my-2 rounded-xl">
+                        <img src={logo} className=" h-14"/>
+                        <h2 className="text-center items-center font-bold my-auto text-2xl text-sky-600 mr-2">Dream Job</h2>
                     </Link>
 
                 </div>
