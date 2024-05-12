@@ -51,21 +51,21 @@ const Navbar = () => {
         <li className=""><NavLink to="/" className="mr-2 text-violet-900">Home</NavLink></li>
         <li><NavLink to="/jobs" className="mr-2">All Jobs</NavLink></li>
 
-        <li><NavLink to="/blogs" className="mr-2">Blogs</NavLink></li>
-
-
-
         {user ? <>
                 <li><NavLink to="/addjob" className="mr-2">Add A Job</NavLink></li>
                 <li><NavLink to={"/appliedjobs"} className="mr-2">Applied Jobs</NavLink></li>
                 <li><NavLink to='/myjobs/' className="mr-2">My Jobs</NavLink></li>
-                <li><NavLink to="/profile" className="mr-2">User Profile</NavLink></li>
+                {/*<li><NavLink to="/profile" className="mr-2">User Profile</NavLink></li>*/}
             </>
             :
             <>
 
             </>
         }
+
+
+        <li><NavLink to="/blogs" className="mr-2">Blogs</NavLink></li>
+
 
     </>
 

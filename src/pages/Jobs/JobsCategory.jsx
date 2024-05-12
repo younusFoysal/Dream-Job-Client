@@ -200,7 +200,7 @@ const JobsCategory = () => {
 
                     <TabPanel>
 
-                        <div id="Projects" className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-4 mb-5">
+                        <div id="Projects" className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-x-14 mt-4 mb-5">
 
                             {
                                 jobsos.map(job => <JobsCategoryCard
@@ -214,7 +214,7 @@ const JobsCategory = () => {
                     </TabPanel>
                     <TabPanel>
 
-                        <div id="jobsr" className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-4 mb-5">
+                        <div id="jobsr" className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-x-14 mt-4 mb-5">
 
                             {
                                 jobsr.map(job => <JobsCategoryCard
@@ -229,7 +229,7 @@ const JobsCategory = () => {
                     </TabPanel>
                     <TabPanel>
                         <div id="Projects"
-                             className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-4 mb-5">
+                             className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-x-14 mt-4 mb-5">
 
                             {
                                 jobsh.map(job => <JobsCategoryCard
@@ -243,7 +243,7 @@ const JobsCategory = () => {
                     <TabPanel>
 
                         <div id="Projects"
-                             className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-4 mb-5">
+                             className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-x-14 mt-4 mb-5">
 
                             {
                                 jobspt.map(job => <JobsCategoryCard

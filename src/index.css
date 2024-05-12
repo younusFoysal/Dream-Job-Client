@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 .progress-bar {
     position: fixed;
     top: 0;
@@ -12,3 +13,5 @@
     background: dodgerblue;
     transform-origin: 0%;
 }
+
+
