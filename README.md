@@ -15,6 +15,14 @@
  [https://dream-job-36fe2.web.app/](https://dream-job-36fe2.web.app/) 
 
 
+Implemented JWT routes:
+```
+https://dream-job-36fe2.web.app/myjobs/
+https://dream-job-36fe2.web.app/appliedjobs
+
+```
+
+
 Installed Npm Packages:
 ```
 @tanstack/react-query

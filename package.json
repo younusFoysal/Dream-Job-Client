@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-pdf/renderer": "^3.4.4",
     "@tanstack/react-query": "^5.35.5",
+    "axios": "^1.6.8",
     "firebase": "^10.11.1",
     "framer-motion": "^11.1.9",
     "localforage": "^1.10.0",

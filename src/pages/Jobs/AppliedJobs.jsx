@@ -253,7 +253,7 @@ const AppliedJobDocument = ({filteredJobs}) => (
 );
 
 const fetchJobsUser = async (email) => { // Receive email as an argument
-    const response = await fetch(`http://localhost:5000/myajobs/${email}`); // Use email
+    const response = await fetch(`http://localhost:5000/myajobs/${email}`, {credentials: "include"}); // Use email
     if (!response.ok) {
         throw new Error('Failed to fetch Jobs');
     }
