@@ -27,6 +27,7 @@ Installed Npm Packages:
 ```
 @tanstack/react-query
 @react-pdf/renderer
+axios
 Firebase
 framer-motion
 Moment
