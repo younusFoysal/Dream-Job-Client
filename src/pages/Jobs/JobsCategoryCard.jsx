@@ -1,10 +1,23 @@
 
 import {FaBriefcase} from "react-icons/fa";
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {AuthContext} from "../../providers/AuthProvider.jsx";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const JobsCategoryCard = ({job}) => {
 
+    const { user } = useContext(AuthContext);
+
     const {title, category, _id, jobURL, salary, details, ddate, appNum, pdate, name, email} = job
+
+
+    const checkUser = () => {
+        if (!user){
+            toast('You have to log in first to view details');
+        }
+    }
 
     return (
         <div>
@@ -57,7 +70,7 @@ const JobsCategoryCard = ({job}) => {
 
                         <div className="pt-5 text-base font-semibold leading-7">
                             <p>
-                                <Link to={`/jobDetails/${_id}`} className=" btn text-sky-500 transition-all duration-300 group-hover:text-white">
+                                <Link to={`/jobDetails/${_id}`} onClick={checkUser} className=" btn text-sky-500 transition-all duration-300 group-hover:text-white">
                                     View Details
                                     &rarr;
                                 </Link>

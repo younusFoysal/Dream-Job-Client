@@ -1,12 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import {useJobsAll} from '../../Hooks/useJobs.jsx';
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {AuthContext} from "../../providers/AuthProvider.jsx";
 
 const AllJobs = () => {
+
+    const { user } = useContext(AuthContext);
 
     let id = 1;
     const { data: jobsall, isLoading: isLoadingAll, isError: isErrorAll } = useJobsAll();
     const [searchQuery, setSearchQuery] = useState('');
+
+    const checkUser = () => {
+        if (!user){
+            toast('You have to log in first to view details');
+        }
+    }
 
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
@@ -135,7 +146,7 @@ const AllJobs = () => {
                                     <td className="py-4 px-6 border-b border-gray-200">{job.ddate}</td>
                                     <td className="py-4 px-6 border-b border-gray-200">{job.salary} Tk</td>
                                     <td className="py-4 px-6 border-b border-gray-200 ">
-                                        <Link to={`/jobDetails/${job._id}`}>
+                                        <Link to={`/jobDetails/${job._id}`} onClick={checkUser}>
                                             <span
                                                 className="bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-full text-xs mr-2">
                                                 Details

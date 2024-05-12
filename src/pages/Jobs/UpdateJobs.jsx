@@ -62,7 +62,7 @@ const UpdateJobs = () => {
         const details = form.details.value;
         const pdate = form.pdate.value;
         const ddate = form.ddate.value;
-        const appNum = form.appNum.value;
+        const appNum = Number(form.appNum.value);
 
         const updatedJob = {
             jobURL,

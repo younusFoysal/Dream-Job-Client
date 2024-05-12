@@ -42,6 +42,9 @@ const AddJob = () => {
         const formData = new FormData(form);
 
         const newJob = Object.fromEntries(formData.entries());
+        if (newJob.hasOwnProperty('appNum')) {
+            newJob.appNum = parseInt(newJob.appNum);
+        }
 
         // const jobURL = form.jobURL.value;
         // const title = form.title.value;

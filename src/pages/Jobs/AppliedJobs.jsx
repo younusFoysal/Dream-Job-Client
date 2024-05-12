@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useQuery, QueryClient, QueryClientProvider } from 'react-query';
 import { useJobs, useAppliedJobs } from '../../Hooks/useAppliedJobs.jsx';
 import { useParams } from 'react-router-dom';
@@ -9,10 +9,46 @@ import {Link} from "react-router-dom";
 import { useMutation, useQueryClient } from 'react-query';
 import { deleteJob } from '../../Hooks/deleteJob.jsx';
 import Swal from "sweetalert2";
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+
+
+
+
+
+
+const styles = StyleSheet.create({
+    page: {
+        flexDirection: 'row',
+        backgroundColor: '#E4E4E4',
+    },
+    section: {
+        margin: 10,
+        padding: 10,
+        flexGrow: 1,
+    },
+    table: {
+        width: '100%',
+    },
+    tableRow: {
+        flexDirection: 'row',
+    },
+    tableHeaderCell: {
+        backgroundColor: '#4299e1',
+        color: '#fff',
+        padding: 8,
+    },
+    tableCell: {
+        padding: 8,
+    },
+});
 
 
 
 const AppliedJobs = () => {
+
+    const summaryRef = useRef();
+    const [downloadStatus, setDownloadStatus] = useState({ loading: false, error: null });
+
 
     const queryClient = new QueryClient();
     const { user } = useContext(AuthContext);
@@ -74,6 +110,21 @@ const AppliedJobs = () => {
 
     //const filteredJobs = jobs.filter(job => job.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
+    const handleDownloadSummary = () => {
+        setDownloadStatus({ loading: true, error: null });
+
+        if (summaryRef.current) {
+            summaryRef.current.updateContainer();
+            summaryRef.current.toPdf().then(() => {
+                setDownloadStatus({ loading: false, error: null });
+            }).catch(error => {
+                setDownloadStatus({ loading: false, error: error.message });
+            });
+        }
+    };
+
+
+
 
     return (
         <div>
@@ -85,17 +136,35 @@ const AppliedJobs = () => {
                         <h1 className="text-3xl">Didn't find job that you were looking for? Try Filter by Category</h1>
                     </div>
 
-                    <div className="w-1/4 mx-auto mb-4">
-                        <select value={filter} onChange={handleFilterChange} className="btn w-full hover:bg-sky-400">
-                            <option value="">All Categories</option>
-                            <option value="onSite">On Site</option>
-                            <option value="remote">Remote</option>
-                            <option value="hybrid">Hybrid</option>
-                            <option value="partTime">Part Time</option>
-                            {/* Add more options based on your actual categories */}
-                        </select>
-                    </div>
+                    <div className="flex items-center justify-center">
 
+                        <div className="w-1/4 mr-2 mb-4">
+                            <select value={filter} onChange={handleFilterChange}
+                                    className="btn w-full hover:bg-sky-400">
+                                <option value="">All Categories</option>
+                                <option value="onSite">On Site</option>
+                                <option value="remote">Remote</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="partTime">Part Time</option>
+                                {/* Add more options based on your actual categories */}
+                            </select>
+                        </div>
+
+                        <div className="w-1/4 ml-2 ">
+                            <div className="btn bg-sky-300 mb-4 w-full mx-auto text-center">
+
+                                <PDFDownloadLink document={<AppliedJobDocument filteredJobs={filteredJobs}/>}
+                                                 fileName="applied_jobs.pdf">
+                                    {({blob, url, loading, error}) =>
+                                        loading ? 'Loading document...' : 'Download Summary'
+                                    }
+                                </PDFDownloadLink>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                     <div className="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
                         <table className="w-full table-fixed">
@@ -139,7 +208,9 @@ const AppliedJobs = () => {
 
                             </tbody>
                         </table>
+
                     </div>
+
 
                 </div>
 
@@ -149,6 +220,37 @@ const AppliedJobs = () => {
     );
 };
 
+const AppliedJobDocument = ({filteredJobs}) => (
+    <Document>
+        <Page size="A4" style={styles.page}>
+            <View style={styles.section}>
+                <Text>Applied Jobs</Text>
+                <View style={styles.table}>
+                    <View style={[styles.tableRow, styles.tableHeaderRow]}>
+                    <Text style={styles.tableHeaderCell}>Id</Text>
+                        <Text style={styles.tableHeaderCell}>Job Title</Text>
+                        <Text style={styles.tableHeaderCell}>Job Category</Text>
+                        <Text style={styles.tableHeaderCell}>Applied Date</Text>
+                        <Text style={styles.tableHeaderCell}>Salary Range</Text>
+                        <Text style={styles.tableHeaderCell}>Details</Text>
+                    </View>
+                    {filteredJobs.map((job, index) => (
+                        <View key={job._id} style={styles.tableRow}>
+                            <Text style={styles.tableCell}>{index + 1}</Text>
+                            <Text style={styles.tableCell}>{job.title}</Text>
+                            <Text style={styles.tableCell}>{job.category}</Text>
+                            <Text style={styles.tableCell}>{job.sdate}</Text>
+                            <Text style={styles.tableCell}>{job.salary} Tk</Text>
+                            <Text style={styles.tableCell}>
+                                <Text>Details</Text>
+                            </Text>
+                        </View>
+                    ))}
+                </View>
+            </View>
+        </Page>
+    </Document>
+);
 
 const fetchJobsUser = async (email) => { // Receive email as an argument
     const response = await fetch(`http://localhost:5000/myajobs/${email}`); // Use email

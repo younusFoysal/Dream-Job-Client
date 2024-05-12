@@ -3,6 +3,8 @@ import JobsCategory from "../Jobs/JobsCategory.jsx";
 
 
 const Home = () => {
+
+
     return (
         <div>
             <Banner></Banner>

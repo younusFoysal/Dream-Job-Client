@@ -31,8 +31,7 @@ const JobDetails = () => {
         },
         onSuccess: (data) => {
             if (data.insertedId) {
-                toast('Application Submitted Successfully');
-
+                toast("Application Submitted Successfully");
             }
         },
     });
@@ -45,6 +44,8 @@ const JobDetails = () => {
 
         const newaJob = Object.fromEntries(formData.entries());
         console.log(newaJob)
+        toast("Application Submitted Successfully")
+
 
         // const jobURL = form.jobURL.value;
         // const title = form.title.value;
@@ -132,7 +133,23 @@ const JobDetails = () => {
                         <div className="flex justify-center">
                             <button
                                 className="inline-flex font-bold text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-sky-600 hover:shadow-xl rounded text-lg"
-                                onClick={() => document.getElementById('my_modal_5').showModal()}
+                                onClick={
+                                    () => {
+                                        const currentDate = new Date();
+
+                                        const formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+
+
+                                        if (user.email === jobs.email) {
+                                            toast("Employer can not apply for his job.")
+                                        }else if (new Date(jobs.ddate) < currentDate) {
+                                            toast("Deadline is over for this job.")
+                                        }else {
+                                            document.getElementById('my_modal_5').showModal()
+                                        }
+                                    }
+                                // () => document.getElementById('my_modal_5').showModal()
+                            }
                             >
                                 Apply Now
                             </button>
@@ -267,7 +284,7 @@ const JobDetails = () => {
             </section>
 
 
-
+            <ToastContainer />
         </div>
     );
 };
