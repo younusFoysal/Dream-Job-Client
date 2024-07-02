@@ -22,7 +22,7 @@ const JobsCategoryCard = ({job}) => {
     return (
         <div>
 
-            <div className="relative flex min-h-screen flex-col justify-center overflow-hidden  py-6 sm:py-12">
+            <div className="relative flex flex-col justify-center overflow-hidden  py-6 sm:py-12">
                 <div className="group relative cursor-pointer overflow-hidden px-6 pt-10 pb-8 bg-gray-50 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
                     <span className="absolute top-10 z-0 h-10 w-10 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[20]"></span>
                     <div className="relative z-10 mx-auto max-w-md ">
