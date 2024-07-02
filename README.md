@@ -1,6 +1,15 @@
-# Dream Job
 
-## Assignment_ID: assignment_category_0003
+
+<h1 align="center">Dream Job </h1>
+
+<p align="center">
+  <img src="public/DreamJobClient.png" alt="Dream Job Client">
+</p>
+<br>
+
+Live Server: [Dream-Job-Client](https://dream-job-36fe2.web.app/)
+
+Server Repo Link: [Dream-Job-Server-Repo](https://github.com/younusFoysal/Dream-Job-Server)
 
 ## Features: 
 * User can Login with Google account.
@@ -10,16 +19,12 @@
 * User can view jobs by job category
 * User see the applied Jobs List.
 
-## Live Link:
- 
- [https://dream-job-36fe2.web.app/](https://dream-job-36fe2.web.app/) 
 
 
 Implemented JWT routes:
 ```
 https://dream-job-36fe2.web.app/myjobs/
 https://dream-job-36fe2.web.app/appliedjobs
-
 ```
 
 
